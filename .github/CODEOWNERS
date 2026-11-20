@@ -1,0 +1,3 @@
+# Replace/add actual maintainers with existing write access before bootstrap.
+# GitHub authors cannot approve their own PRs; assign a separate eligible reviewer.
+* @sanchezbrent
