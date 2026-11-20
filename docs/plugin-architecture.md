@@ -55,3 +55,8 @@ schema as the reviewed candidate. Do not duplicate chart logic in the editor.
 A no-code data update becomes possible only after approved schema/reader adapters
 and the atomic publication path are installed. A brand-new chart type still needs
 a reviewed code release.
+
+The initial host delivery uses a digest-verified committed package snapshot because
+Boardwalk's immutable Functions compiler disallows arbitrary package imports. The
+external repository remains the authoring source. See the delivery section in the
+integration investigation for the facade, parity and release-graph requirements.

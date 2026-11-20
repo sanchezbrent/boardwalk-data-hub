@@ -96,3 +96,34 @@ separate editorial validation/approval, focused CI and responsive/pinned-output
 review. An authorized release operator follows the existing pinned release controls.
 Do not overwrite historical snapshots or treat saving/approving a draft as a
 public update. No deployment or production publication was authorized in this work.
+
+## Reproducible package delivery is part of the host work
+
+The current [Functions compiler](https://github.com/CenterCoopMedia/njpbs/blob/9448591b8fd2f42e9172d89b9e9b00f50d61074d/scripts/lib/functions-contracts.mjs)
+accepts entry facades only under content-core or Site library paths. Its resolver
+rejects unexpected package imports and reconstructs compiled contract bytes from
+tracked Git inputs. An npm install plus an import into a facade will currently fail.
+Do not loosen that resolver to accept arbitrary node_modules or build-time network
+fetches; those would lose the existing source/release graph guarantee.
+
+For the first host increment, import an approved plugin package as a committed
+snapshot under a dedicated plugin vendor directory. Verify its artifact SHA-256,
+reviewed source/tested-tree identity, manifest and version before extraction; keep
+compiled dist files, declarations, LICENSE and NOTICE together. Record these
+identities in the host-owned installation manifest and audit updates as plugin
+upgrades. All plugin authoring and domain tests stay in this external repository.
+The host consumes an immutable release snapshot, with no local domain-code edits.
+
+A content-core facade can re-export the vendored server adapter through relative
+imports and be added to the existing Functions recipe. Its transitive vendored JS
+then belongs to the tracked Git graph and can be compiled by the current resolver.
+The Admin lazy wrapper uses the same vendored browser entry and declarations;
+adapt the logical package imports in the React example to this host delivery path.
+Prove generated CommonJS and browser behavior against the same fixture cases, and
+check source/notice retention in the host's immutable serializer build.
+
+A later package-manager source supplier can replace this snapshot step only after
+it pins integrity, includes all transitive package bytes in the immutable release
+graph, and passes reproducibility/retention tests. A bare ESM import into the
+CommonJS Functions entry or an unpinned Git URL is not a supported integration.
+No npm registry publication is required for the committed-snapshot pilot.
