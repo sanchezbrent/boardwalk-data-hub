@@ -1,0 +1,22 @@
+name: Plugin feature
+description: Propose an increment with a reviewable acceptance boundary.
+title: "[Feature] "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: User problem and expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Plugin boundary, host changes and capability needs
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance checks and release evidence
+    validations:
+      required: true

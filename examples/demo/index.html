@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <meta charset="utf-8" /><meta
+    name="viewport"
+    content="width=device-width,initial-scale=1"
+  /><title>Data Hub plugin · local pilot</title>
+  <style>
+    body {
+      margin: 0;
+      background: #edf2f5;
+      font-family: system-ui;
+      color: #162d38;
+    }
+    header {
+      max-width: 72rem;
+      margin: auto;
+      padding: 1.5rem;
+    }
+    select,
+    button {
+      font: inherit;
+      padding: 0.5rem;
+    }
+    :focus-visible {
+      outline: 3px solid #784500;
+      outline-offset: 3px;
+    }
+  </style>
+  <header>
+    <p>
+      <strong
+        >Local pilot · synthetic data · no persistence or public
+        publication</strong
+      >
+    </p>
+    <label for="persona">Simulated staff role</label>
+    <select id="persona">
+      <option value="author">Author</option>
+      <option value="validator">Independent validator</option>
+      <option value="approver">Editorial approver</option>
+      <option value="viewer">Read-only staff</option>
+    </select>
+    <button id="reset">Reset local pilot</button>
+    <p>
+      Uses a fixed test clock: November 20, 2026. Reloading clears all changes.
+    </p>
+  </header>
+  <main id="plugin"></main>
+  <script type="module" src="/examples/demo/main.mjs"></script>
+</html>
