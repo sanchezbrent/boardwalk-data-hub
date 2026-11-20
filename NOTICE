@@ -1,0 +1,6 @@
+The electricity input contract and synthetic fixture are adapted from the team's
+unpublished Data Hub foundation work based on CenterCoopMedia/njpbs commit
+d25d481dd7a9ba507d7592e1bc3550e28086040d (MIT, copyright 2026 NJ PBS).
+The upstream draft is not claimed as merged or deployed. This repository includes
+no NJ PBS marks, editorial datasets, private source evidence or production settings.
+The MIT license covers code; it grants no trademark or editorial-content rights.
