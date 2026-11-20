@@ -8,7 +8,5 @@
     "noEmit": true,
     "skipLibCheck": true
   },
-  "include": [
-    "examples/boardwalk/*.tsx"
-  ]
+  "include": ["examples/boardwalk/*.tsx"]
 }

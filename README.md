@@ -2,10 +2,9 @@
 
 The first Boardwalk CMS plugin pilot: a separate Data Hub editor with an explicit
 host contract, strict electricity-data profile, private review workflow and local
-browser demonstration. The intended public home is
-[sanchezbrent/boardwalk-data-hub](https://github.com/sanchezbrent/boardwalk-data-hub).
-Repository creation and hosted settings require a verified bootstrap receipt;
-this link alone does not claim that setup has completed.
+browser demonstration. Public home: [sanchezbrent/boardwalk-data-hub](https://github.com/sanchezbrent/boardwalk-data-hub).
+The first implementation is under review in [draft PR #1](https://github.com/sanchezbrent/boardwalk-data-hub/pull/1).
+Active repository settings are checked by the bootstrap readback; the PR checks record hosted validation.
 
 This is a working development increment. Boardwalk's production CMS is not yet
 wired to it. There is no production publication endpoint, database adapter, full
@@ -32,16 +31,16 @@ silently seeds a draft with the synthetic fixture.
 
 ## What belongs here
 
-| Surface | Responsibility |
-| --- | --- |
-| `src/contract.ts` | Framework-neutral manifest, API compatibility, exact host allowlist, mount/unmount lifecycle |
-| `src/electricity.ts` | Strict input schema, source and reuse metadata, matched NJ/US monthly comparisons |
-| `src/server.ts` | Trusted review transitions, SHA-256 input binding, capability checks and stale-version refusal |
-| `src/host-adapter.ts` | Authentication/transaction port for a small Boardwalk server adapter |
-| `src/ui.ts` | Framework-neutral editor, value preview and review actions using only a supplied bridge |
-| `scripts/inventory.mjs` | Explicit-path, read-only inventory of all 18 existing figures and snapshot parity |
-| `examples/boardwalk/PluginRoute.tsx` | Type-checked React route wrapper for Boardwalk's lazy routes |
-| `.github/` | CI, CodeQL, Dependabot, PR/issues, ownership and applyable merge rules |
+| Surface                              | Responsibility                                                                                 |
+| ------------------------------------ | ---------------------------------------------------------------------------------------------- |
+| `src/contract.ts`                    | Framework-neutral manifest, API compatibility, exact host allowlist, mount/unmount lifecycle   |
+| `src/electricity.ts`                 | Strict input schema, source and reuse metadata, matched NJ/US monthly comparisons              |
+| `src/server.ts`                      | Trusted review transitions, SHA-256 input binding, capability checks and stale-version refusal |
+| `src/host-adapter.ts`                | Authentication/transaction port for a small Boardwalk server adapter                           |
+| `src/ui.ts`                          | Framework-neutral editor, value preview and review actions using only a supplied bridge        |
+| `scripts/inventory.mjs`              | Explicit-path, read-only inventory of all 18 existing figures and snapshot parity              |
+| `examples/boardwalk/PluginRoute.tsx` | Type-checked React route wrapper for Boardwalk's lazy routes                                   |
+| `.github/`                           | CI, CodeQL, Dependabot, PR/issues, ownership and applyable merge rules                         |
 
 Boardwalk owns staff identity, explicit plugin activation/grants, trusted storage,
 audit retention, public rendering and release control. A manifest requests
